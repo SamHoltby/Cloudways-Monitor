@@ -1,1 +1,1 @@
-# Cloudways-Montioring
+# Cloudways-Monitor
