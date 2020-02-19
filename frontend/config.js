@@ -1,0 +1,1 @@
+export const client_endpoint = `http://localhost:4000`;

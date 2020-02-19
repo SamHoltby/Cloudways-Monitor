@@ -1,0 +1,4 @@
+GRAPHQL_ENDPOINT="http://localhost:3000"
+CLOUDWAYS_API_KEY=""
+CLOUDWAYS_API_EMAIL=""
+CLOUDWAYS_API_ENDPOINT="https://api.cloudways.com/api/v1/"

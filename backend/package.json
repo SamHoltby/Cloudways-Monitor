@@ -1,0 +1,14 @@
+{
+  "name": "cloudways-monitor-backend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "dotenv": "6.0.0",
+    "apollo-server": "^2.10.1",
+    "apollo-datasource-rest": "^0.7.0",
+    "graphql": "^14.6.0"
+  }
+}
