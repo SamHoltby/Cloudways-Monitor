@@ -1,6 +1,5 @@
 import React from 'react'
 import Servers from "../components/Servers";
-import NeedLogin from "../components/NeedLogin";
 import cookie from "react-cookies";
 import Login from "../components/Login";
 import Router from 'next/router'

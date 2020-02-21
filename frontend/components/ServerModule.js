@@ -3,7 +3,7 @@ import {Card, Fade, Table} from "react-bootstrap";
 
 const ServerModule = (props) => {
     return (
-        <Card bg="dark" text="white" style={{width: '18rem', maxWidth: '417px'}}>
+        <Card bg="dark" text="white" style={{margin:0}}>
             <Card.Body>
                 <Card.Title>#{props.id} {props.label} - {props.status}</Card.Title>
                 <Card.Text></Card.Text>

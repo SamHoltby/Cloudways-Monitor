@@ -31,7 +31,12 @@ const Servers = (props) => {
                 }}/>;
                 if (error) return <ErrorMessage error={error}/>;
 
-                return (<CardDeck style={{marginTop: '8rem'}}>
+                return (<CardDeck style={{
+                    marginTop: '8rem',
+                    display: 'grid',
+                    gridTemplateColumns: '1fr 1fr 1fr',
+                    gridGap: '25px'
+                }}>
                     {data.servers.map((data) => (<ServerModule key={data.id} {...data}/>))}
                 </CardDeck>)
             }}
