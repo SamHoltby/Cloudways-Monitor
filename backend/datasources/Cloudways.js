@@ -1,6 +1,5 @@
 const {RESTDataSource} = require('apollo-datasource-rest');
 
-
 class CloudwaysAPI extends RESTDataSource {
     constructor() {
         super();
@@ -8,24 +7,23 @@ class CloudwaysAPI extends RESTDataSource {
     }
 
     willSendRequest(request) {
-        request.headers.set('Authorization', `Bearer ${this.context.access_token}`);
+        if (this.context.access_token) {
+            request.headers.set('Authorization', `Bearer ${this.context.access_token}`);
+        }
     }
 
-    async getOAuthAccessToken() {
-        const response = await this.post(
+    async getOAuthAccessToken({email, api_key}) {
+        return await this.post(
             'oauth/access_token',
             {
-                email: process.env.CLOUDWAYS_API_EMAIL,
-                api_key: process.env.CLOUDWAYS_API_KEY
+                email: email,
+                api_key: api_key
             }
         );
-
-        return response
-            ? response.access_token
-            : '';
     }
 
-    async getServerList() {
+    async getServerList(access_token) {
+        this.context.access_token = access_token;
         const response = await this.get('server');
 
         return response

@@ -2,7 +2,8 @@ const {gql} = require('apollo-server');
 
 const typeDefs = gql`
     type AccessToken {
-        token: String!
+        access_token: String!
+        expires_in: Int!
     }
 
     type Server{
@@ -17,8 +18,11 @@ const typeDefs = gql`
     }
 
     type Query {
-        accessToken: AccessToken
-        servers:[Server]!
+        servers(access_token:String!):[Server]!
+    }
+    
+    type Mutation{
+        accessToken(email:String!, api_key:String!): AccessToken
     }
 `;
 

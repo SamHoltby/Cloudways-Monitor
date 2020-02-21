@@ -2,12 +2,16 @@ const { ApolloServer, gql } = require('apollo-server');
 require('dotenv').config({ path: '.env' });
 
 const typeDefs =  require("./typeDefs");
-const resolvers = require("./resolvers");
+const Query = require("./resolvers/Query");
+const Mutation = require("./resolvers/Mutation");
 const CloudwaysAPI = require('../datasources/Cloudways');
 
 const server = new ApolloServer({
     typeDefs,
-    resolvers,
+    resolvers:{
+        Query,
+        Mutation
+    },
     dataSources: () => ({
         cloudwaysAPI: new CloudwaysAPI()
     })
